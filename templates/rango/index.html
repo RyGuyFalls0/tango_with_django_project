@@ -31,14 +31,13 @@
                     {% for page in pages %}
                     <ul>
                         <li>
-                            <a href="/rango/category/{{ page.url }}/">{{ page.title }}</a>
+                            <a href="{{ page.url }}/">{{ page.title }}</a>
                         </li>
                     </ul>
                     {% endfor %}
                 {% else %}
                 <strong>no pages rn</strong>
                 {% endif %}
-
         </div>
     </body>
 </html>
