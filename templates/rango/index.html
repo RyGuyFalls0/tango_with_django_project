@@ -13,6 +13,7 @@
         <div>
             <a href="/rango/about">About</a>
             <img src="{% static 'images/Charles.jpg' %}" alt="Charles Manson">
+            <h2>Most Liked Categories</h2>
             <ul>
                 {% for category in categories %}
                 <li>
@@ -22,6 +23,22 @@
                 {% endfor %}
                 </ul>
                 
+        </div>
+
+        <div>
+                {% if pages %}
+                    <h2>Most Viewed Pages</h2>
+                    {% for page in pages %}
+                    <ul>
+                        <li>
+                            <a href="/rango/category/{{ page.url }}/">{{ page.title }}</a>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                {% else %}
+                <strong>no pages rn</strong>
+                {% endif %}
+
         </div>
     </body>
 </html>
