@@ -13,6 +13,15 @@
         <div>
             <a href="/rango/about">About</a>
             <img src="{% static 'images/Charles.jpg' %}" alt="Charles Manson">
+            <ul>
+                {% for category in categories %}
+                <li>
+                <!-- The following line is changed to add an HTML hyperlink -->
+                <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+                </ul>
+                
         </div>
     </body>
 </html>
