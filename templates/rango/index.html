@@ -11,16 +11,7 @@
             <strong>{{ boldmessage }}</strong><br />
         </div>
         <div>
-            <a href="{% url 'rango:about' %}">About</a>
-        <a href="{% url 'rango:add_category' %}">Add a New Category</a><br />
             <img src="{% static 'images/Charles.jpg' %}" alt="Charles Manson">
             <h2>Most Liked Categories</h2>
-            <ul>
-                {% for category in categories %}
-                <li>
-                <!-- The following line is changed to add an HTML hyperlink -->
-                <a href="{% url 'rango:show_category' category.slug%}">{{ category.name }}</a>
-                </li>
-                {% endfor %}
-            </ul>
+
 {% endblock %}
