@@ -16,7 +16,7 @@ def index(request):
     page_list = Page.objects.order_by('-views')[:5]
 
     context_dict = {}
-    context_dict['boldmessage'] = 'Crunchy, creamy, GROSS!!!'
+    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
 
@@ -64,7 +64,7 @@ def add_category(request):
     return render(request, 'rango/add_category.html/', {'form': form})
 
 @login_required
-def add_page(request,category_name_slug):
+def add_page(request, category_name_slug):
     try:
         category = Category.objects.get(slug=category_name_slug)
     except:
@@ -85,8 +85,9 @@ def add_page(request,category_name_slug):
             return redirect('/rango/')
         else:
             print(form.errors)
+            print(form.cleaned_data)
     context_dict = {'form': form, 'category': category}
-    return render(request, 'rango/add_page.html/', {'form': form}, context_dict)
+    return render(request, 'rango/add_page.html/', context_dict)
 
 def register(request):
     registered = False

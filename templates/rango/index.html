@@ -7,12 +7,16 @@
 {% block body_block %}
         <h1>Rango says...</h1>
         <div>
+            {% if user.is_authenticated %}
+            hey there {{user.username}}
+            {%else%}
             hey there partner! <br />
+            {%endif%}
             <p>Visits: {{visits}}</p>
             <strong>{{ boldmessage }}</strong><br />
         </div>
         <div>
-            <img src="{% static 'images/Charles.jpg' %}" alt="Charles Manson">
+            <img src="{% static 'images/rango.jpg' %}" alt="Charles Manson">
             <h2>Most Liked Categories</h2>
 
 {% endblock %}
